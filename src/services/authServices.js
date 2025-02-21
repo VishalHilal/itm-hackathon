@@ -1,6 +1,8 @@
 import { appwriteConfig } from "@/lib/appwrite/appwrite";
 import { Account, ID } from "appwrite";
 import { client } from "@/lib/appwrite/appwrite";
+import AuthError from "@/lib/appwrite/AuthError";
+
 class AuthServices {
   client;
   account;
@@ -49,7 +51,6 @@ class AuthServices {
   async getCurrentUser() {
     try {
       const user = await this.account.get();
-
       return user;
     } catch (error) {
       console.log(error);

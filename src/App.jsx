@@ -5,12 +5,15 @@ import { userContext } from "./context/userContext";
 import ServicesPage from "./_root/servicesPage/ServicesPage";
 import ContactPage from "./_root/contact/ContactPage";
 import AboutPage from "./_root/about/AboutPage";
-import LandingPage from "./_root/landingPage/LandingPage";
 import LoginPage from "./_auth/loginPage/LoginPage";
 import AuthLayout from "./_auth/AuthLayout";
 import RootLayout from "./_root/RootLayout";
 import AuthPage from "./_auth/authPage/AuthPage";
 import CreateProfile from "./_root/createProfile/CreateProfile";
+import HomePage from "./_root/homePage/HomePage";
+import ChatPage from "./_root/chatPage/ChatPage";
+import NewsPage from "./_root/newsPage/NewsPage";
+import ProfilePage from "./_root/profilePage/ProfilePage";
 
 function App() {
   const { addUser } = useContext(userContext);
@@ -40,10 +43,13 @@ function App() {
         </Route>
 
         <Route element={<RootLayout />}>
-          <Route path="/" element={<LandingPage />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/chat" element={<ChatPage />} />
+          <Route path="/news" element={<NewsPage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/create-profile" element={<CreateProfile />} />
         </Route>
       </Routes>
